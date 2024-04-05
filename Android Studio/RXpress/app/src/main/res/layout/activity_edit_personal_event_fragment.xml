@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.calendar.EditPersonalEventFragment">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editEventName"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_event_name_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:hint="@string/nameOfEvent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:gravity="top"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEventName">
+
+        <TextView
+            android:id="@+id/edit_start"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/startTime"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/editStartTime"
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/startTime"
+            android:textAlignment="viewEnd" />
+
+        <TextView
+            android:id="@+id/edit_End"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/endTime"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/editEndTime"
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/endTime" />
+
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editEventDescription"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_event_description_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:hint="@string/description" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/edit_event_button"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:text="@string/editPersonalEvent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEventDescription" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "375925104138",
+    "firebase_url": "https://rxpress-27f8a-default-rtdb.firebaseio.com",
+    "project_id": "rxpress-27f8a",
+    "storage_bucket": "rxpress-27f8a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:375925104138:android:4a600cb9f8c258926649f3",
+        "android_client_info": {
+          "package_name": "com.example.rxpress10"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "375925104138-258j2cvj7qg3d68e724h77tg36vjpv0l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rxpress10",
+            "certificate_hash": "33170bb1842335f1547e05427c4e5370cd476f9f"
+          }
+        },
+        {
+          "client_id": "375925104138-6kq9v0c67sc0d0vhi19mf6kr7er7dnjt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rxpress10",
+            "certificate_hash": "ecc5f1f14b54ee97edf0ec7cd777a7ff6aefeafe"
+          }
+        },
+        {
+          "client_id": "375925104138-s7rm9go70nvjasaia5jooels47nhl7n9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDx7766CvIqzRhTjb_sXdlPthGEQzzqUpw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "375925104138-s7rm9go70nvjasaia5jooels47nhl7n9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

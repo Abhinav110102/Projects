@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/interaction_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/interaction_help"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--TODO Add a recycler view above that has a list of previously entered drugs-->
+
+        <!--    TODO Turn this also into a recycler view of cards with different interactions-->
+        <!--    <EditText-->
+        <!--        android:id="@+id/drug_interaction_text"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="48dp"-->
+        <!--        android:layout_marginHorizontal="48dp"-->
+        <!--        android:layout_marginVertical="10dp"-->
+        <!--        android:ems="10"-->
+        <!--        android:hint="@string/drugHint"-->
+        <!--        android:imeOptions="actionSend"-->
+        <!--        android:maxLines="1"-->
+        <!--        android:minLines="1"-->
+        <!--        android:padding="10dp"-->
+        <!--        android:textColor="@color/black"-->
+        <!--        android:visibility="visible"-->
+        <!--        app:layout_constraintTop_toTopOf="parent"-->
+        <!--        tools:layout_editor_absoluteX="50dp" />-->
+
+
+        <!--    <Button-->
+        <!--        android:id="@+id/drug_interaction_btn"-->
+        <!--        android:layout_width="320dp"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:text="@string/drugInteractionButtonText"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintHorizontal_bias="0.494"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintTop_toBottomOf="@+id/drug_interaction_text" />-->
+
+        <LinearLayout
+            android:id="@+id/interaction_recycler_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+
+                android:id="@+id/interaction_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:isScrollContainer="false"
+                android:paddingTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/drug_interaction_btn"
+                tools:listitem="@layout/drug_card">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+        </LinearLayout>
+
+
+        <!--    <LinearLayout-->
+        <!--        android:id="@+id/container"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:orientation="horizontal"-->
+        <!--        app:layout_constraintBottom_toBottomOf="@id/constraint"-->
+        <!--        app:layout_constraintTop_toTopOf="@id/constraint"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        >-->
+
+        <!--        <ImageView-->
+        <!--            android:layout_width="64dp"-->
+        <!--            android:layout_height="64dp"-->
+        <!--            android:src="@drawable/logo_removebg_preview__2_"-->
+        <!--            android:layout_gravity="center_vertical"/>-->
+        <!--        <TextView-->
+        <!--            android:id="@+id/ui_desc"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Search high severity drugs by clicking the search bar at the top of the screen"-->
+        <!--            android:textSize="24sp"-->
+        <!--            android:textStyle="bold" />-->
+
+        <!--    </LinearLayout>-->
+
+
+        <!--    <LinearLayout-->
+        <!--        android:id="@+id/linearLayout4"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:orientation="horizontal"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintTop_toBottomOf="@id/interaction_recycler_layout"-->
+        <!--        tools:ignore="MissingConstraints"-->
+        <!--        android:paddingTop="16dp">-->
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/adduser"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="@string/add_user"-->
+        <!--            android:textColor="@color/purple_700"-->
+        <!--            android:textSize="28sp"-->
+        <!--            android:textStyle="bold" />-->
+
+
+        <!--    </LinearLayout>-->
+
+        <!--    <ImageView-->
+        <!--        android:id="@+id/AddingUser"-->
+        <!--        android:layout_width="48dp"-->
+        <!--        android:layout_height="48dp"-->
+        <!--        android:layout_marginStart="48dp"-->
+        <!--        android:src="@drawable/ic_baseline_add_circle_24"-->
+        <!--        app:layout_constraintBottom_toBottomOf="@+id/linearLayout4"-->
+        <!--        app:layout_constraintStart_toEndOf="@+id/linearLayout4"-->
+        <!--        app:layout_constraintTop_toTopOf="@+id/adduser"-->
+        <!--        app:tint="@color/purple_700" />-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,274 @@
+<resources>
+    <string name="app_name">RXpress</string>
+    <string name="do_you_already_have_an_account">Do you already have an account?</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="register">Register</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="welcome">Welcome!</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="faq">FAQ</string>
+    <string name="prescriptions">Prescription</string>
+    <string name="title_activity_settings_fragment">SettingsFragment</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+
+    <!-- Prescription Add -->
+    <string name="prescription_name">Prescription Name</string>
+    <string name="dosage">Dosage</string>
+    <string name="units">Units</string>
+    <string name="frequency">How Many Times a Day</string>
+    <string name="enter_other_requirements_e_g_food_drink">Enter Other Requirements (e.g. food, drink)</string>
+    <string name="rx_number">RX Number</string>
+    <string name="add_medication">Add Medication</string>
+    <string name="medications">Medications: %s</string>
+
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="settings">Settings</string>
+    <string name="calendar">Calendar</string>
+
+    <string name="email2">Email</string>
+
+    <!-- Prescription Home Screen -->
+    <string name="add">Add\nMedication</string>
+
+    <!-- Calendar View -->
+    <string name="Date">Date: %s</string>
+
+
+    <string name="mYear">%s</string>
+    <string name="monDate">%s\n%s</string>
+    <string name="sunDate">%s\n%s</string>
+    <string name="tueDate">%s\n%s</string>
+    <string name="wedDate">%s\n%s</string>
+    <string name="thurDate">%s\n%s</string>
+    <string name="friDate">%s\n%s</string>
+    <string name="satDate">%s\n%s</string>
+    <string name="num">11</string>
+    <string name="back"><![CDATA[<-]]></string>
+    <string name="forward"><![CDATA[->]]></string>
+    <string name="time">%s</string>
+    <string name="drugFacts">%s</string>
+    <string name="looking_for_drug_facts">Looking for drug facts?</string>
+    <string name="interaction">Interaction: %s</string>
+    <string name="severity_s">Severity: %s</string>
+    <string name="drug1_s">Drug 1: %s</string>
+    <string name="drug2_s">Drug 2: %s</string>
+    <string name="drugHint">Enter a drug\'s name</string>
+    <string name="drugInteractionButtonText">Search Interactions</string>
+    <string name="drug_interactions">Drug Interactions</string>
+    <string name="answer">Answer</string>
+    <string name="link"><u>Link</u></string>
+    <string name="linkText"><u>%s</u></string>
+    <string name="question">Question</string>
+
+    <string name="delete">Delete</string>
+
+    <string name="event1">Take %s - %s</string>
+    <string name="event2">Take %s - %s</string>
+    <string name="event3">Take %s - %s</string>
+    <string name="a1">1 am</string>
+    <string name="a2">2 am</string>
+    <string name="a3">3 am</string>
+    <string name="a4">4 am</string>
+    <string name="a5">5 am</string>
+    <string name="a6">6 am</string>
+    <string name="a7">7 am</string>
+    <string name="a8">8 am</string>
+    <string name="a9">9 am</string>
+    <string name="a10">10 am</string>
+    <string name="a11">11 am</string>
+    <string name="p12">12 pm</string>
+    <string name="p1">1 pm</string>
+    <string name="p2">2 pm</string>
+    <string name="p3">3 pm</string>
+    <string name="p4">4 pm</string>
+    <string name="p5">5 pm</string>
+    <string name="p6">6 pm</string>
+    <string name="p7">7 pm</string>
+    <string name="p8">8 pm</string>
+    <string name="p9">9 pm</string>
+    <string name="p10">10 pm</string>
+    <string name="p11">11 pm</string>
+    <string name="a12">12 am</string>
+
+    <string name="allDay">All Day</string>
+    <string name="eventA">%s</string>
+
+    <!-- Calendar Event Detail View -->
+    <string name="prescriptionName">Event Details</string>
+    <string name="pNameKnown">Rx Number: %s\nDosage: %s%s\nFrequency: Taken %s times a day\nDirections: Take %s</string>
+    <string name="pNameUnKnown">%s\n\t\t%s\n\t\t%s\n\t\t%s\n\t\t%s</string>
+
+
+    <!-- Calendar Personal Event -->
+    <string name="nameOfEvent">Name of the Event</string>
+    <string name="startTime">Start Time</string>
+    <string name="endTime">End Time</string>
+    <string name="description">Description of the Event</string>
+    <string name="addEvent">Add Event</string>
+    <string-array name="time_array">
+        <item>None</item>
+        <item>1 am</item>
+        <item>2 am</item>
+        <item>3 am</item>
+        <item>4 am</item>
+        <item>5 am</item>
+        <item>6 am</item>
+        <item>7 am</item>
+        <item>8 am</item>
+        <item>9 am</item>
+        <item>10 am</item>
+        <item>11 am</item>
+        <item>12 pm</item>
+        <item>1 pm</item>
+        <item>2 pm</item>
+        <item>3 pm</item>
+        <item>4 pm</item>
+        <item>5 pm</item>
+        <item>6 pm</item>
+        <item>7 pm</item>
+        <item>8 pm</item>
+        <item>9 pm</item>
+        <item>10 pm</item>
+        <item>11 pm</item>
+        <item>12 am</item>
+    </string-array>
+    <string name="personalEdit">Edit</string>
+    <string name="personalDelete">Delete</string>
+    <string name="personalNameKnown">Start Time: %s\nEnd Time: %s\nDetails: %s</string>
+    <string name="personalNameUnKnown">Name: %s\n\t\tStart Time: %s\n\t\tEnd Time: %s%\n\t\tDetails: %s</string>
+    <string name="editPersonalEvent">Update Event</string>
+
+    <string name="Cal7day">This Week</string>
+
+    <!-- Prescription Recycler View -->
+    <string name="prescriptionForP">Your Prescriptions</string>
+    <string name="prescription">- %s %s %s</string>
+
+
+    <!-- Reminder Recycler View -->
+    <string name="reminders">- Take %s%s of %s %s at %s</string>
+    <string name="reminder">Your Reminders</string>
+
+    <!-- Google SignIn/Register -->
+    <string name="google_signin">Google Login</string>
+    <string name="password1">Password</string>
+    <string name="web_client_id">375925104138-s7rm9go70nvjasaia5jooels47nhl7n9.apps.googleusercontent.com</string>
+    <string name="exit">Exit</string>
+    <string name="title_activity_event_fragment">EventFragment</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <!-- Profile/Profile Button/Edit Profile -->
+    <string name="profile">Profile</string>
+    <string name="firstName">First Name</string>
+    <string name="lastName">Last Name</string>
+    <string name="dateOfBirth">Date of Birth</string>
+    <string name="Email">Email Address</string>
+    <string name="Gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="nonbinary">Non-binary</string>
+    <string name="notToSay">Prefer Not To Say</string>
+    <string name="Pronouns">Pronouns</string>
+    <string name="dobHint">MM-DD-YYYY</string>
+    <string name="editProfile">Edit Profile</string>
+    <string name="cngPic">Change Profile Picture</string>
+    <string name="userName"> %s\n%s</string>
+    <string name="info">Your Information</string>
+    <string name="dob">Date of Birth: %s</string>
+    <string name="gender">Gender: %s</string>
+    <string name="emailAddress">Email: %s</string>
+    <string name="pronouns">Pronouns: %s</string>
+    <string name="saveProfileEdits">Save</string>
+
+    <!-- Logout -->
+    <string name="logoutbtn">Logout</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_prescription_home_fragment">PrescriptionHomeFragment</string>
+    <string name="add_user">Add User?</string>
+    <string name="add_medication_desc">click here to add medication</string>
+    <string name="prescription_item">%s</string>
+    <string name="completion_hint">Select a medication</string>
+    <string name="userNamePrescriptions">%s\'s Prescriptions</string>
+    <string name="title_activity_user">UserActivity</string>
+    <string name="s_prescription_s">%s Prescription\'s</string>
+    <string name="prescription_view_title">%s</string>
+    <string name="dosage_s">Dosage: %s</string>
+    <string name="frequency_view">Frequency: Taken %s times a day</string>
+    <string name="requirements_s">Requirements: %s</string>
+    <string name="rx_number_s">RX Number: %s</string>
+    <string name="confirm_edit">Confirm Edit</string>
+    <string name="adminstered">How Is The Prescription Taken</string>
+    <string name="administered_s">Administered: %s</string>
+    <string name="interaction_help">Look up high severity drug interactions
+        by clicking the search icon at the top of the screen</string>
+
+    <string-array name="Units">
+        <item>Units</item>
+        <item>mg</item>
+        <item>g</item>
+        <item>μg</item>
+        <item>grains</item>
+        <item>milliequivalents</item>
+        <item>mL</item>
+        <item>L</item>
+        <item>tbsp</item>
+        <item>tsp</item>
+        <item>drops</item>
+        <item>ounces</item>
+        <item>tablets</item>
+        <item>capsules</item>
+    </string-array>
+
+    <string-array name="Frequency">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="Adminstered">
+        <item>Orally</item>
+        <item>Inhalation</item>
+        <item>Instillation</item>
+        <item>Intramuscular Injection</item>
+        <item>Intravenous Injection</item>
+        <item>Subcutaneous Injection</item>
+        <item>Transdermal Administration</item>
+        <item>Rectal Administration</item>
+        <item>Vaginal Administration</item>
+    </string-array>
+</resources>

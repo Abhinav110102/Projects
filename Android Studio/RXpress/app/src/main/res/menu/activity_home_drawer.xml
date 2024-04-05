@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group
+        android:checkableBehavior="single"
+        android:visible="true">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_prescription_home"
+            android:icon="@drawable/ic_pill"
+            android:title="@string/prescriptions" />
+        <item
+            android:id="@+id/nav_interactions"
+            android:icon="@drawable/lab_research"
+            android:title="@string/drug_interactions"/>
+        <item
+            android:id="@+id/nav_calendar_fragment"
+            android:icon="@drawable/ic_calendar"
+            android:title="@string/calendar" />
+        <item
+            android:id="@+id/nav_faq"
+            android:icon="@drawable/ic_faq"
+            android:title="@string/faq" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_gear"
+            android:title="@string/settings"
+            />
+
+    </group>
+</menu>

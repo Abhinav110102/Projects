@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cngProfilePicture"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.settings.ProfileFragment">
+
+    <ImageView
+        android:id="@+id/profilePicture"
+        android:layout_width="105dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/image"
+        android:contentDescription="@string/profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/changeProfilePicture"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="-30dp"
+        android:layout_marginBottom="-10dp"
+        android:background="@drawable/purple_circle"
+        android:contentDescription="@string/cngPic"
+        android:src="@drawable/ic_menu_camera"
+        app:layout_constraintBottom_toBottomOf="@+id/profilePicture"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/profilePicture" />
+
+    <TextView
+        android:id="@+id/profileName"
+        android:layout_width="180dp"
+        android:layout_height="56dp"
+        android:gravity="center"
+        android:text="@string/userName"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profilePicture" />
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/info"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileName" />
+
+    <TextView
+        android:id="@+id/emailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/emailAddress"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info" />
+
+    <TextView
+        android:id="@+id/dob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dob"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailAddress" />
+
+    <TextView
+        android:id="@+id/gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gender"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dob" />
+
+    <TextView
+        android:id="@+id/pronouns"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pronouns"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gender" />
+
+    <Button
+        android:id="@+id/editProfile"
+        android:layout_width="336dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="30dp"
+        android:background="@color/teal_200"
+        android:text="@string/editProfile"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

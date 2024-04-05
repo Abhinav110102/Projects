@@ -1,0 +1,1460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dateReturn"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.calendar.CalendarFragment">
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:minHeight="48dp"
+            android:onClick="setMonthAndYear"
+            android:text="@string/back"
+            android:textColor="@color/purple_500"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/monthYear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:layout_weight="2"
+            android:text="@string/mYear"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/forwardButton"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/backButton"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Jan 2023" />
+
+        <Button
+            android:id="@+id/forwardButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:layout_weight="1"
+            android:background="#02FFFFFF"
+            android:minHeight="48dp"
+            android:text="@string/forward"
+            android:textColor="@color/purple_500"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="65dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/sun"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="dateSet"
+            android:text="@string/sunDate"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <TextView
+            android:id="@+id/mon"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="dateSet"
+            android:text="@string/monDate"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tue"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="dateSet"
+            android:text="@string/tueDate"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/wed"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="dateSet"
+            android:text="@string/wedDate"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/thur"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="dateSet"
+            android:text="@string/thurDate"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/fri"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="dateSet"
+            android:text="@string/friDate"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/sat"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="dateClicked"
+            android:text="@string/satDate"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:contentDescription="@string/calendar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/allDayEvents"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/allDay"
+                    android:layout_width="24dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/allDay" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/all1"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetRight="4dp"
+                    android:text="@string/eventA"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/all2"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetRight="4dp"
+                    android:text="@string/eventA"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/all3"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/eventA"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/t1a"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Am1"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/a1" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/prescript1a"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:paddingTop="4dp"
+                    android:text="@string/event1"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript1a2"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event2"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript1a3"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/t2a"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Am2"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/a2" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/prescript2a"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event1"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript2a2"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event2"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript2a3"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/t3a"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Am3"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/a3" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/prescript3a"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event1"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript3a2"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event2"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript3a3"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/t4a"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Am4"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/a4" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/prescript4a"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event1"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript4a2"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event2"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript4a3"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/t5a"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Am5"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/a5" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/prescript5a"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event1"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript5a2"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event2"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript5a3"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/t6a"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Am6"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/a6" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/prescript6a"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event1"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript6a2"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event2"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript6a3"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/t7a"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Am7"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/a7" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/prescript7a"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event1"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript7a2"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event2"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript7a3"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/t8a"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Am8"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/a8" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/prescript8a"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event1"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript8a2"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event2"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript8a3"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/t9a"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Am9"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/a9" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/prescript9a"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event1"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript9a2"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event2"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript9a3"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/t10a"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Am10"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/a10" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/prescript10a"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event1"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript10a2"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event2"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript10a3"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/t11a"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Am11"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/a11" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/prescript11a"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event1"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript11a2"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event2"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript11a3"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/t12p"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Pm12"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/p12" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/prescript12p"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event1"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript12p2"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event2"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript12p3"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/t1p"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Pm1"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/p1" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/prescript1p"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event1"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript1p2"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event2"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript1p3"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/t2p"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Pm2"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/p2" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/prescript2p"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event1"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript2p2"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event2"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript2p3"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/t3p"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Pm3"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/p3" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/prescript3p"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event1"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript3p2"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event2"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript3p3"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/t4p"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Pm4"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/p4" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/prescript4p"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event1"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript4p2"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event2"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript4p3"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/t5p"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Pm5"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/p5" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/prescript5p"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event1"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript5p2"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event2"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript5p3"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/t6p"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Pm6"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/p6" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/prescript6p"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event1"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript6p2"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event2"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript6p3"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/t7p"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Pm7"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/p7" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/prescript7p"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event1"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript7p2"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event2"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript7p3"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/t8p"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Pm8"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/p8" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/prescript8p"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event1"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript8p2"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event2"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript8p3"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/t9p"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Pm9"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/p9" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/prescript9p"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event1"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript9p2"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event2"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript9p3"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/t10p"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Pm10"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/p10" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/prescript10p"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event1"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript10p2"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event2"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript10p3"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/t11p"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Pm11"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/p11" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/prescript11p"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event1"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript11p2"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event2"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript11p3"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/t12a"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Am12"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/a12" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/prescript12a"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event1"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript12a2"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetRight="4dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event2"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/prescript12a3"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/event3"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/purple_200"
+        android:clickable="true"
+        android:contentDescription="edit or delete medication"
+        android:padding="24dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_baseline_add_24"
+        android:theme="@style/Theme.RXpress10"
+        app:fabCustomSize="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:maxImageSize="48dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

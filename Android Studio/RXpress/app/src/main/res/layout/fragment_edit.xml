@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ui.prescriptions.PrescriptionFragment">
+    <!--Prescription User Input-->
+
+
+    <TextView
+        android:id="@+id/prescription_edit_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/prescription_view_title"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <!--            <com.google.android.material.textfield.TextInputLayout-->
+            <!--                android:id="@+id/prescription_name"-->
+            <!--                android:layout_width="320dp"-->
+            <!--                android:layout_height="wrap_content">-->
+
+            <!--                <com.google.android.material.textfield.TextInputEditText-->
+            <!--                    android:id="@+id/prescription_name_edit_text"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:background="#00FFFFFF"-->
+            <!--                    android:hint="@string/prescription_name" />-->
+            <!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dosage"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dosage_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:hint="@string/dosage"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:id="@+id/units"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="16dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/units_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1"
+                    android:background="#00FFFFFF"
+                    android:inputType="none"
+                    android:hint="Units" />
+
+                <!--                <com.google.android.material.textfield.TextInputEditText-->
+                <!--                    android:id="@+id/units_edit_text"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:background="#00FFFFFF"-->
+                <!--                    android:hint="@string/units" />-->
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:id="@+id/frequency"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="16dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/frequency_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1"
+                    android:background="#00FFFFFF"
+                    android:inputType="none"
+                    android:hint="@string/frequency" />
+
+                <!--                <com.google.android.material.textfield.TextInputEditText-->
+                <!--                    android:id="@+id/units_edit_text"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:background="#00FFFFFF"-->
+                <!--                    android:hint="@string/units" />-->
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:id="@+id/taken"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="16dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/taken_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1"
+                    android:background="#00FFFFFF"
+                    android:inputType="none"
+                    android:hint="@string/adminstered" />
+
+                <!--                <com.google.android.material.textfield.TextInputEditText-->
+                <!--                    android:id="@+id/units_edit_text"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:background="#00FFFFFF"-->
+                <!--                    android:hint="@string/units" />-->
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/other_requirements"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/other_requirements_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:hint="@string/enter_other_requirements_e_g_food_drink" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/rx_num"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/rx_num_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    android:hint="@string/rx_number"
+                    android:inputType="numberSigned" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/edit_btn"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="@string/confirm_edit"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

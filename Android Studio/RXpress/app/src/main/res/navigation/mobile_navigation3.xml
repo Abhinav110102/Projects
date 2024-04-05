@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation3"
+    android:label="User's Prescriptions"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.rxpress10.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_nav_home_to_nav_faq"
+            app:destination="@id/nav_faq" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_calendar"
+            app:destination="@id/nav_calendar_fragment" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_settings"
+            app:destination="@id/nav_settings" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_interactions"
+            app:destination="@id/nav_interactions" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_prescription_home2"
+            app:destination="@id/nav_prescription_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_faq"
+        android:name="com.example.rxpress10.ui.faq.FAQFragment"
+        android:label="@string/faq"
+        tools:layout="@layout/activity_faqfragment" >
+        <action
+            android:id="@+id/action_nav_faq_to_nav_calendar_fragment"
+            app:destination="@id/nav_calendar_fragment"
+            app:popUpTo="@id/nav_faq"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_nav_faq_to_nav_interactions"
+            app:destination="@id/nav_interactions"
+            app:popUpTo="@id/nav_faq"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_nav_faq_to_nav_settings"
+            app:destination="@id/nav_settings"
+            app:popUpTo="@id/nav_faq"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_nav_faq_to_nav_prescription_home"
+            app:destination="@id/nav_prescription_home"
+            app:popUpTo="@id/nav_faq"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_nav_faq_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/nav_faq"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_prescriptions"
+        android:name="com.example.rxpress10.ui.prescriptions.PrescriptionFragment"
+        android:label="@string/prescriptions"
+        tools:layout="@layout/activity_prescription_fragment">
+        <argument
+            android:name="userName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_calendar_fragment"
+        android:name="com.example.rxpress10.ui.calendar.CalendarFragment"
+        android:label="@string/calendar"
+        tools:layout="@layout/activity_calendar_fragment">
+        <action
+            android:id="@+id/action_nav_calendar_fragment_to_eventFragment3"
+            app:destination="@id/eventFragment3" />
+        <action
+            android:id="@+id/action_nav_calendar_fragment_to_personalEventFragment"
+            app:destination="@id/personalEventFragment" />
+        <action
+            android:id="@+id/action_nav_calendar_fragment_to_personalEventDetailFragment"
+            app:destination="@id/personalEventDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventFragment3"
+        android:name="com.example.rxpress10.ui.calendar.EventFragment"
+        android:label="@string/prescriptionName">
+        <argument
+            android:name="prescripName"
+            app:argType="string" />
+        <argument
+            android:name="date"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.example.rxpress10.ui.settings.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/activity_settings_fragment">
+        <action
+            android:id="@+id/action_nav_settings_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_interactions"
+        android:name="com.example.rxpress10.ui.interaction.DrugInteractionFragment"
+        android:label="@string/drug_interactions"
+        tools:layout="@layout/fragment_drug_interaction" />
+
+    <fragment
+        android:id="@+id/nav_prescription_home"
+        android:name="com.example.rxpress10.ui.prescriptions.PrescriptionHomeFragment"
+        android:label="Users">
+        <action
+            android:id="@+id/action_nav_prescription_home_to_userPrescriptionFragment"
+            app:destination="@id/userPrescriptionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.rxpress10.ui.settings.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/activity_profile_fragment">
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.rxpress10.ui.settings.EditProfileFragment"
+        android:label="@string/editProfile"
+        tools:layout="@layout/activity_edit_profile_fragment" />
+    <fragment
+        android:id="@+id/personalEventFragment"
+        android:name="com.example.rxpress10.ui.calendar.PersonalEventFragment"
+        android:label="@string/addEvent"
+        tools:layout="@layout/activity_personal_event_fragment">
+        <argument
+            android:name="date"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/personalEventDetailFragment"
+        android:name="com.example.rxpress10.ui.calendar.PersonalEventDetailFragment"
+        android:label="Personal Event Details"
+        tools:layout="@layout/activity_personal_event_detail_fragment">
+        <argument
+            android:name="eventName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_personalEventDetailFragment_to_nav_calendar_fragment"
+            app:destination="@id/nav_calendar_fragment"
+            app:popUpTo="@id/nav_calendar_fragment" />
+        <action
+            android:id="@+id/action_personalEventDetailFragment_to_editPersonalEventFragment"
+            app:destination="@id/editPersonalEventFragment"
+            app:popUpTo="@id/personalEventDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editPersonalEventFragment"
+        android:name="com.example.rxpress10.ui.calendar.EditPersonalEventFragment"
+        android:label="@string/editPersonalEvent"
+        tools:layout="@layout/activity_edit_personal_event_fragment">
+        <argument
+            android:name="eventName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_editPersonalEventFragment_to_personalEventDetailFragment"
+            app:destination="@id/personalEventDetailFragment"
+            app:popUpTo="@id/personalEventDetailFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/userPrescriptionFragment"
+        android:name="com.example.rxpress10.ui.prescriptions.users.UserPrescriptionFragment"
+        android:label="User Prescriptions">
+        <action
+            android:id="@+id/action_userPrescriptionFragment_to_nav_prescriptions"
+            app:destination="@id/nav_prescriptions" />
+        <action
+            android:id="@+id/action_userPrescriptionFragment_to_viewPrescription"
+            app:destination="@id/viewPrescription" />
+        <action
+            android:id="@+id/action_userPrescriptionFragment_to_nav_prescription_home"
+            app:destination="@id/nav_prescription_home"
+            app:popUpTo="@id/nav_home"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="position"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewPrescription"
+        android:name="com.example.rxpress10.ui.prescriptions.view.ViewPrescription"
+        android:label="Prescription Details"
+        tools:layout="@layout/fragment_view_prescription">
+        <action
+            android:id="@+id/action_viewPrescription_to_editFragment"
+            app:destination="@id/editFragment" />
+        <action
+            android:id="@+id/action_viewPrescription_to_nav_prescription_home"
+            app:destination="@id/nav_prescription_home"
+            app:popUpTo="@id/nav_home" />
+        <argument
+            android:name="userName"
+            app:argType="string" />
+        <argument
+            android:name="prescriptionName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.example.rxpress10.ui.prescriptions.view.EditFragment"
+        android:label="Edit Prescription">
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument android:name="dosage" />
+        <argument android:name="units" />
+        <argument android:name="frequency" />
+        <argument android:name="administered"/>
+        <argument android:name="other" />
+        <argument android:name="rxNum" />
+        <argument android:name="userName" />
+        <action
+            android:id="@+id/action_editFragment_to_viewPrescription"
+            app:destination="@id/viewPrescription"
+            app:popUpTo="@id/userPrescriptionFragment" />
+    </fragment>
+</navigation>

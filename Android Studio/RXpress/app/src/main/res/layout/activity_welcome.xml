@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WelcomeActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="TODO"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/my_project__1_" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="#00FFFFFF"
+        android:text="@string/welcome"
+        android:textColor="#009688"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="350dp"
+        android:layout_height="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/loginButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/loginButton"
+        app:srcCompat="@drawable/green_teal_gradient" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="350dp"
+        android:layout_height="32dp"
+        android:background="#00FFFFFF"
+        android:foreground="@drawable/green_teal_gradient"
+        app:layout_constraintBottom_toBottomOf="@+id/registerButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/registerButton"
+        app:srcCompat="@drawable/green_teal_gradient" />
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-30dp"
+        android:background="#00FFFFFF"
+        android:onClick="goToLogin"
+        android:text="@string/login"
+        android:textColor="#000000"
+        app:backgroundTint="#00FFFFFF"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:rippleColor="#00FFFFFF" />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="#00FFFFFF"
+        android:onClick="goToRegister"
+        android:text="@string/register"
+        android:textColor="#000000"
+        app:backgroundTint="#00FFFFFF"
+        app:cornerRadius="20dp"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton"
+        app:rippleColor="#00FFFFFF" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="350dp"
+        android:layout_height="32dp"
+        android:background="#00FFFFFF"
+        android:foreground="@drawable/green_teal_gradient"
+        app:layout_constraintBottom_toBottomOf="@+id/gSignInBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/gSignInBtn"
+        app:srcCompat="@drawable/green_teal_gradient" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/gSignInBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="#00FFFFFF"
+        android:text="Sign in with Google "
+        android:textColor="#000000"
+        app:backgroundTint="#00FFFFFF"
+        app:icon="@drawable/googlelogo"
+        app:iconGravity="textStart"
+        app:iconPadding="16dp"
+        app:iconSize="20dp"
+        app:iconTint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerButton" />
+</androidx.constraintlayout.widget.ConstraintLayout>

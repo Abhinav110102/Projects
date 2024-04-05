@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="428dp"
+        android:layout_height="54dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar2"
+            android:layout_width="431dp"
+            android:layout_height="56dp"
+            android:background="@color/purple_500"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme" />
+
+        <ImageButton
+            android:id="@+id/MenuButton"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:background="#006200EE"
+            android:contentDescription="@string/action_settings"
+            android:onClick="goToMenu"
+            android:visibility="visible"
+            app:srcCompat="@drawable/ic_menu"
+            tools:srcCompat="@drawable/ic_menu"
+            tools:visibility="visible" />
+
+    </com.google.android.material.navigation.NavigationView>
+
+    <Button
+        android:id="@+id/sunday"
+        android:layout_width="59dp"
+        android:layout_height="wrap_content"
+        android:text="@string/sunDate"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/monday"
+        android:layout_width="59dp"
+        android:layout_height="wrap_content"
+        android:text="@string/monDate"
+        app:layout_constraintEnd_toStartOf="@+id/tuesday" />
+
+    <Button
+        android:id="@+id/tuesday"
+        android:layout_width="59dp"
+        android:layout_height="wrap_content"
+        android:text="@string/tueDate"
+        app:layout_constraintEnd_toStartOf="@+id/wednesday" />
+
+    <Button
+        android:id="@+id/wednesday"
+        android:layout_width="59dp"
+        android:layout_height="wrap_content"
+        android:text="@string/wedDate"
+        app:layout_constraintEnd_toStartOf="@+id/thursday" />
+
+    <Button
+        android:id="@+id/thursday"
+        android:layout_width="59dp"
+        android:layout_height="wrap_content"
+        android:text="@string/thurDate"
+        app:layout_constraintEnd_toStartOf="@+id/friday" />
+
+    <Button
+        android:id="@+id/friday"
+        android:layout_width="59dp"
+        android:layout_height="wrap_content"
+        android:text="@string/friDate"
+        app:layout_constraintEnd_toStartOf="@+id/saturday" />
+
+    <Button
+        android:id="@+id/saturday"
+        android:layout_width="58dp"
+        android:layout_height="wrap_content"
+        android:text="@string/satDate"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
