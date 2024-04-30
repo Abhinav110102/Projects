@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CameraXApp</string>
+    <string name="take_photos">Take Photo</string>
+    <string name="start_capture">Record Video</string>
+    <string name="stop_capture">Stop Recording</string>
+    <string name="welcome_to_camerax">Welcome to CameraX</string>
+</resources>
